@@ -2,11 +2,9 @@ package com.hendisantika.example.demoactuator;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.actuate.autoconfigure.ExportMetricWriter;
-import org.springframework.boot.actuate.metrics.writer.MessageChannelMetricWriter;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.boot.web.support.SpringBootServletInitializer;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.integration.annotation.ServiceActivator;
 import org.springframework.integration.channel.DirectChannel;
@@ -36,11 +34,11 @@ public class DemoActuatorApplication extends SpringBootServletInitializer {
 		return new DirectChannel();
 	}
 
-	@Bean
-	@ExportMetricWriter
-	public MessageChannelMetricWriter messageChannelMetricWriter() {
-		return new MessageChannelMetricWriter(metricsChannel());
-	}
+//	@Bean
+//	@ExportMetricWriter
+//	public MessageChannelMetricWriter messageChannelMetricWriter() {
+//		return new MessageChannelMetricWriter(metricsChannel());
+//	}
 
 //    @Bean
 //    @ServiceActivator(inputChannel = "metricsChannel")
